@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  mongo:
+    image: mongo:6
+    container_name: slad_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: slad
+volumes:
+  mongo_data:
+
+
